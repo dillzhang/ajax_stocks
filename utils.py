@@ -13,4 +13,4 @@ def getJSON(stockTicker):
     print responce.keys()
     print responce['Name']
     return responce
-getPrice("AAPL")
+getJSON("AAPL")
