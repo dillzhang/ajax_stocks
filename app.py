@@ -13,8 +13,9 @@ def home():
 
 @app.route('/update')
 def update():
-    information = utils.getInfo()
-    return json.dumps(information)
+	information = utils.getInfo()
+	print information
+	return json.dumps(information)
 
 
 @app.route('/search')
