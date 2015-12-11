@@ -1,3 +1,15 @@
+var searchStock = function searchStock() {
+    stockTicker = document.getElementById("stockTicker").value;
+    initialInvestment = document.getElementById("initialInvestment").value;
+    $.get("/search",{stockTicker:stockTicker, initialInvestment:initialInvestment}, function(e){
+	var information = JSON.parse(e);
+	returnInfo = $("#returnInfo");
+	returnInfo.html(information.returnInfo);
+    });
+};
+
+document.getElementById("search").addEventListener("click",searchStock);
+
 var updateStock = function updateStock() {
     $.get("/update", function(e) {
 	var information = JSON.parse(e);
