@@ -22,7 +22,7 @@ def getReturn(stockTicker, investment):
     numStocks = investment * 1.0 / origPrice
     currWorth = numStocks * lastPrice
     netProfit = currWorth - investment
-    information['return'] = netProfit
+    information['returnInfo'] = netProfit
     return information
 
 
@@ -41,10 +41,7 @@ def getInfo():
     stocks = f.read().split("\n")
     f.close()
     information = {}
-    i = 0
     for stock in stocks:
-        print i, " ", stock
-        i += 1
         stockData = getJSON(stock)
         information[stock] = stockData['LastPrice']
     return information
