@@ -1,7 +1,7 @@
-
+from os import urandom
 import urllib2, json
 
-
+secret_key = urandom(32)
 
 def getJSON(stockTicker):
     url = "http://dev.markitondemand.com/MODApis/Api/v2/Quote/json?symbol="
