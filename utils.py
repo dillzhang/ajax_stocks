@@ -29,23 +29,26 @@ def getReturn(stockTicker, investment):
     information = {}
     investment = int(investment)
     stockTicker = guessTicker(stockTicker)
-    stockData = getJSON(stockTicker)
-    origPrice = stockData['ChangeYTD']
-    lastPrice = stockData['LastPrice']
-    numStocks = investment / origPrice
-    currWorth = numStocks * lastPrice
-    netProfit = currWorth - investment
-    information['returnInfo'] = netProfit
+    if stockTicker == "Error, Stock Ticker not found":
+        information['returnInfo'] = "No Stock with said ticker"
+    else:
+        stockData = getJSON(stockTicker)
+        origPrice = stockData['ChangeYTD']
+        lastPrice = stockData['LastPrice']
+        numStocks = investment / origPrice
+        currWorth = numStocks * lastPrice
+        netProfit = currWorth - investment
+        information['returnInfo'] = netProfit
     return information
 
 
 def getInfo():
-	print "starting getInfo"
-	f = open("stockTicker.csv", "r")
-	stocks = f.read().split("\n")
-	f.close()
-	information = {}
-	for stock in stocks:
-	    stockData = getJSON(stock)
-	    information[stock] = stockData['LastPrice']
-	return information
+    print "starting getInfo"
+    f = open("stockTicker.csv", "r")
+    stocks = f.read().split("\n")
+    f.close()
+    information = {}
+    for stock in stocks:
+        stockData = getJSON(stock)
+        information[stock] = stockData['LastPrice']
+    return information
