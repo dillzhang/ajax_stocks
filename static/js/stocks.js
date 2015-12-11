@@ -12,10 +12,7 @@ document.getElementById("search").addEventListener("click",searchStock);
 
 var updateStock = function updateStock() {
     $.get("/update", function(e) {
-    console.log(e);
 	var information = JSON.parse(e);
-	console.log(information);
-	console.log(information['GOOG'])
 	GOOG = $("#GOOG");
 	GOOG.html(information['GOOG']);
 	AMBA = $("#AMBA");
