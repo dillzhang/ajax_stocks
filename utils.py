@@ -1,7 +1,9 @@
 from os import urandom
-import urllib2, json
+import urllib2
+import json
 
 secret_key = urandom(32)
+
 
 def getJSON(stockTicker):
     url = "http://dev.markitondemand.com/MODApis/Api/v2/Quote/json?symbol="
@@ -9,27 +11,40 @@ def getJSON(stockTicker):
     
     page = urllib2.urlopen(url)
     responce = json.load(page)
-    print responce.keys()
-    print responce['LastPrice']
-    print responce['ChangeYTD']
     return responce
-getJSON("AAPL")
 
-def estimateReturn(stockTicker, investment):
-	stockData = getJSON(stockTicker)
-	origPrice = stockData['ChangeYTD']
-	lastPrice = stockData['LastPrice']
-	numStocks = investment * 1.0 / origPrice 
-	currWorth = numStocks * lastPrice
-	netProfit = currWorth - investment
-	return netProfit
-print estimateReturn("AAPL", 1000000)
+
+def getReturn(stockTicker, investment):
+    information = {}
+    stockData = getJSON(stockTicker)
+    origPrice = stockData['ChangeYTD']
+    lastPrice = stockData['LastPrice']
+    numStocks = investment * 1.0 / origPrice
+    currWorth = numStocks * lastPrice
+    netProfit = currWorth - investment
+    information['return'] = netProfit
+    return information
+
 
 def guessTicker(company):
-	url = "http://dev.markitondemand.com/MODApis/Api/v2/Lookup/json?input="
-	url += company
-	page = urllib2.urlopen(url)
-	responce = json.load(page)
-	if (len(responce) < 1):
-		return "Error, Stock Ticker not found"
-	return responce[0]['Symbol']
+    url = "http://dev.markitondemand.com/MODApis/Api/v2/Lookup/json?input="
+    url += company
+    page = urllib2.urlopen(url)
+    responce = json.load(page)
+    if (len(responce) < 1):
+        return "Error, Stock Ticker not found"
+    return responce[0]['Symbol']
+
+
+def getInfo():
+    f = open("stockTicker.csv", "r")
+    stocks = f.read().split("\n")
+    f.close()
+    information = {}
+    i = 0
+    for stock in stocks:
+        print i, " ", stock
+        i += 1
+        stockData = getJSON(stock)
+        information[stock] = stockData['LastPrice']
+    return information

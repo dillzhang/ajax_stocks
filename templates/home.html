@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="static/jquery.js"></script>
+  </head>
+  <body>
+
+    Specific Stock: <input type="text" id="stockTicker"> </input> <br>
+    Initial Investment: <input type="number" id="initialInvestment"> </input>
+    Submit:
+    
+    <table>
+      <tr>
+	<td>FXCB</td> <td id='FXCB'></td>
+	<td>OASWHC</td> <td id='OASWHC'></td>
+	<td>GENC</td> <td id='GENC'></td>
+	<td>HPY</td> <td id='HPY'></td>
+      </tr>
+      <tr>
+	<td>LOJN</td> <td id='LOJN'></td>
+	<td>LPTH</td> <td id='LPTH'></td>
+	<td>CASY</td> <td id='CASY'></td>
+	<td>RCON</td> <td id='RCON'></td>
+      </tr>
+      <tr>
+	<td>TXMD</td> <td id='TXMD'></td>
+	<td>SSNI</td> <td id='SSNI'></td>
+	<td>AXTI</td> <td id='AXTI'></td>
+	<td>NWL</td> <td id='NWL'></td>
+      </tr>
+      <tr>
+	<td>ORBK</td> <td id='ORBK'></td>
+	<td>AVAV</td> <td id='AVAV'></td>
+	<td>PLAB</td> <td id='PLAB'></td>
+	<td>MTN</td> <td id='MTN'></td>
+      </tr>
+      <tr>
+	<td>TSN</td> <td id='TSN'></td>
+	<td>CERS</td> <td id='CERS'></td>
+	<td>ATAI</td> <td id='ATAI'></td>
+	<td>ZAGG</td> <td id='ZAGG'></td>
+      </tr>
+      <tr>
+	<td>DD</td> <td id='DD'></td>
+	<td>NAII</td> <td id='NAII'></td>
+	<td>HMIN</td> <td id='HMIN'></td>
+	<td>AXON</td> <td id='AXON'></td>
+      </tr>
+      <tr>
+	<td>CNTY</td> <td id='CNTY'></td>
+	<td>LIVE</td> <td id='LIVE'></td>
+	<td>RNG</td> <td id='RNG'></td>
+	<td>XRS</td> <td id='XRS'></td>
+      </tr>
+      <tr>
+	<td>FRAN</td> <td id='FRAN'></td>
+	<td>BRCM</td> <td id='BRCM'></td>
+	<td>MCOX</td> <td id='MCOX'></td>
+	<td>TAOM</td> <td id='TAOM'></td>
+      </tr>
+      <tr>
+	<td>NVRO</td> <td id='NVRO'></td>
+	<td>FCS</td> <td id='FCS'></td>
+	<td>SAFM</td> <td id='SAFM'></td>
+	<td>HFFC</td> <td id='HFFC'></td>
+      </tr>
+      <tr>
+	<td>HRL</td> <td id='HRL'></td>
+	<td>FIVN</td> <td id='FIVN'></td>
+	<td>FIZZ</td> <td id='FIZZ'></td>
+	<td>VRA</td> <td id='VRA'></td>
+      </tr>
+      <tr>
+	<td>KR</td> <td id='KR'></td>
+	<td>ORBC</td> <td id='ORBC'></td>
+	<td>AVGO</td> <td id='AVGO'></td>
+	<td>IRC</td> <td id='IRC'></td>
+      </tr>
+      <tr>
+	<td>MEET</td> <td id='MEET'></td>
+	<td>HIIQ</td> <td id='HIIQ'></td>
+	<td>BLT</td> <td id='BLT'></td>
+	<td>VUZI</td> <td id='VUZI'></td>
+      </tr>
+      <tr>
+	<td>FARM</td> <td id='FARM'></td>
+	<td>PBY</td> <td id='PBY'></td>
+	<td>FSNN</td> <td id='FSNN'></td>
+	<td>BLL</td> <td id='BLL'></td>
+      </tr>
+      <tr>
+	<td>MCBC</td> <td id='MCBC'></td>
+	<td>CLBH</td> <td id='CLBH'></td>
+	<td>ULTA</td> <td id='ULTA'></td>
+	<td>MGPI</td> <td id='MGPI'></td>
+      </tr>
+      <tr>
+	<td>RTEC</td> <td id='RTEC'></td>
+	<td>ITC</td> <td id='ITC'></td>
+	<td>PLUS</td> <td id='PLUS'></td>
+	<td>GDDY</td> <td id='GDDY'></td>
+      </tr>
+      <tr>
+	<td>DATE</td> <td id='DATE'></td>
+	<td>CMN</td> <td id='CMN'></td>
+	<td>NTES</td> <td id='NTES'></td>
+	<td>NG</td> <td id='NG'></td>
+      </tr>
+      <tr>
+	<td>DOW</td> <td id='DOW'></td>
+	<td>EDUC</td> <td id='EDUC'></td>
+	<td>RP</td> <td id='RP'></td>
+	<td>CDTX</td> <td id='CDTX'></td>
+      </tr>
+      <tr>
+	<td>HUBS</td> <td id='HUBS'></td>
+	<td>IIJI</td> <td id='IIJI'></td>
+	<td>CPB</td> <td id='CPB'></td>
+	<td>IRBT</td> <td id='IRBT'></td>
+      </tr>
+      <tr>
+	<td>TSYS</td> <td id='TSYS'></td>
+	<td>MUSA</td> <td id='MUSA'></td>
+	<td>ZEN</td> <td id='ZEN'></td>
+	<td>AYI</td> <td id='AYI'></td>
+      </tr>
+      <tr>
+	<td>TTNP</td> <td id='TTNP'></td>
+	<td>WMIH</td> <td id='WMIH'></td>
+	<td>EDU</td> <td id='EDU'></td>
+	<td>HQCL</td> <td id='HQCL'></td>
+      </tr>
+      <tr>
+	<td>KAMN</td> <td id='KAMN'></td>
+	<td>EGRX</td> <td id='EGRX'></td>
+	<td>RTN</td> <td id='RTN'></td>
+	<td>GLOB</td> <td id='GLOB'></td>
+      </tr>
+      <tr>
+	<td>LBMH</td> <td id='LBMH'></td>
+	<td>KANG</td> <td id='KANG'></td>
+	<td>GPN</td> <td id='GPN'></td>
+	<td>GMCR</td> <td id='GMCR'></td>
+      </tr>
+      <tr>
+	<td>EFUT</td> <td id='EFUT'></td>
+	<td>DYAX</td> <td id='DYAX'></td>
+	<td>OLED</td> <td id='OLED'></td>
+	<td>BXLT</td> <td id='BXLT'></td>
+      </tr>
+      <tr>
+	<td>ORMP</td> <td id='ORMP'></td>
+	<td>CPRT</td> <td id='CPRT'></td>
+	<td>LGND</td> <td id='LGND'></td>
+	<td>ANF</td> <td id='ANF'></td>
+      </tr>
+      <tr>
+	<td>QIHU</td> <td id='QIHU'></td>
+	<td>AMWD</td> <td id='AMWD'></td>
+	<td>MG</td> <td id='MG'></td>
+	<td>CUI</td> <td id='CUI'></td>
+      </tr>
+    </table>
+
+
+    <script src="static/stock.js"></script>
+  </body>
+</html>
