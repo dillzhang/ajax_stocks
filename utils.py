@@ -15,9 +15,7 @@ def getJSON(stockTicker):
 
 def guessTicker(company):
     url = "http://dev.markitondemand.com/MODApis/Api/v2/Lookup/json?input="
-    print company
     url += company
-    print url
     page = urllib2.urlopen(url)
     responce = json.load(page)
     if (len(responce) < 1):
