@@ -16,6 +16,7 @@ def getJSON(stockTicker):
 
 def getReturn(stockTicker, investment):
     information = {}
+    stockTicker = guessTicker(stockTicker)
     stockData = getJSON(stockTicker)
     origPrice = stockData['ChangeYTD']
     lastPrice = stockData['LastPrice']
