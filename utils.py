@@ -13,7 +13,6 @@ def getJSON(stockTicker):
     return responce
 
 
-
 def guessTicker(company):
     url = "http://dev.markitondemand.com/MODApis/Api/v2/Lookup/json?input="
     print company
@@ -29,7 +28,6 @@ def guessTicker(company):
 def getReturn(stockTicker, investment):
     information = {}
     investment = int(investment)
-    print stockTicker
     stockTicker = guessTicker(stockTicker)
     stockData = getJSON(stockTicker)
     origPrice = stockData['ChangeYTD']
